@@ -17,11 +17,11 @@ public class KafkaTopicConfig {
         return TopicBuilder.name("topic-test-1")
                 .partitions(2)
                 .replicas(1)
-                .configs(configPrpos())
+                .configs(configProps())
                 .build();
     }
 
-    public Map<String, String> configPrpos (){
+    public Map<String, String> configProps (){
         Map<String, String> configurations = new HashMap<>();
         configurations.put(TopicConfig.CLEANUP_POLICY_CONFIG, TopicConfig.CLEANUP_POLICY_DELETE);
         configurations.put(TopicConfig.RETENTION_MS_CONFIG, "86400000");
