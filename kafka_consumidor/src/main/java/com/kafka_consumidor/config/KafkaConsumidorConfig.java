@@ -17,7 +17,7 @@ import java.util.Map;
 @Configuration
 public class KafkaConsumidorConfig {
 
-    @Value("${spring.kafka.bootstrapServers}")
+    @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
     @Bean
@@ -26,10 +26,10 @@ public class KafkaConsumidorConfig {
     }
 
     @Bean
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> listenerContainerFactory(ConsumerFactory<String, String> consumerFactory){
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> listenerContainerFactory(){
         ConcurrentKafkaListenerContainerFactory<String, String> containerFactory = new ConcurrentKafkaListenerContainerFactory<>();
 
-        containerFactory.setConsumerFactory(consumerFactory);
+        containerFactory.setConsumerFactory(consumerFactory ());
         return  containerFactory;
     }
 
