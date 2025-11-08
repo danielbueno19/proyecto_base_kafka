@@ -48,11 +48,8 @@ proyecto_ini_kafka/
 Antes de ejecutar las aplicaciones, asegúrate de tener Kafka ejecutándose:
 
 ```bash
-# Iniciar Zookeeper
-bin/zookeeper-server-start.sh config/zookeeper.properties
-
-# Iniciar Kafka Server
-bin/kafka-server-start.sh config/server.properties
+# Iniciar KRaft
+.\bin\windows\kafka-server-start.bat .\config\server.properties
 ```
 
 ## 🏃‍♂️ Ejecución
